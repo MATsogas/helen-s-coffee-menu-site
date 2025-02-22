@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #E88F2A;
-    --secondary: #FAF3EB;
+    --primary: #fe0f12;
+    --secondary: #35DFFE;
     --light: #FFFFFF;
     --dark: #2B2825;
 }
@@ -104,11 +104,6 @@ h6,
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
     padding: 20px 15px;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
-    color: var(--primary);
 }
 
 @media (max-width: 991.98px) {
@@ -312,4 +307,55 @@ h6,
 .bg-img {
     background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.nav-link.active {
+    background-color: var(--primary) !important;
+    border: 0.15em solid var(--secondary);
+    border-width: 0.15em 0 0.15em 0;
+}
+.bg-primary .nav-link.active {
+    background-color: var(--secondary) !important;
+    border: 0.15em solid var(--light);
+    border-width: 0.15em 0 0.15em 0;
+    font-weight: bold;
+}
+
+.bg-checkered {
+    background-image: /*linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)),*/ url(../img/Checkered.jpg);
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.bg-secondary::after, .bg-secondary::before {
+    margin-bottom: 1em;
+}
+
+.bg-secondary::before {
+    bottom: -0.5em;
+}
+
+.bg-secondary::after {
+    bottom: -0.25em;
+}
+
+.px-1em {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
