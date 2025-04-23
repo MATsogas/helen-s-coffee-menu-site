@@ -406,6 +406,11 @@ h6,
     text-overflow: ellipsis;
 }
 
+#top-logo {
+    width: 40%;
+    object-fit: scale-down;
+}
+
 @media (max-width: 800px) {
     .menu-image-container {
         width: 30%;
