@@ -43,12 +43,21 @@ fetch('./Menu.xlsx')
             col.className = 'col-lg-6';
 
             const hasImage = item.Image && item.Image.trim() !== '';
+            const itemToPopup = `{ 
+              title: '${item.Title || ''}', 
+              description: '${item.Description || ''}', 
+              price: '${item.Price || '0.00'}', 
+              ${hasImage ?
+                `image: '${item.Image}'` :
+                ''
+              }
+            }`;
             const html = `
-              <div class="d-flex h-100 bg-secondary border-inner">
+              <div class="d-flex h-100 bg-secondary border-inner" onclick="showMenuItemDetails(${itemToPopup})">
                 <div class="d-flex flex-column justify-content-center text-start">
                   <h5 class="par1-e">${item.Title || ''}</h5>
                   <span class="par2-e">${item.Description || ''}</span>
-                  <h6>$${item.Price || '0.00'}</h6>
+                  <h6>${item.Price || '0.00'}</h6>
                 </div>
                 ${hasImage ? `
                   <div class="flex-shrink-0 menu-image-container">

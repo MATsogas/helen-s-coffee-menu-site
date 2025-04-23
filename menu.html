@@ -118,7 +118,19 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+    
+    <!-- Menu Item Popup Start -->>
+    <div id="menuModal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close" onclick="hideMenuItemDetails()">&times;</span>
+          <h2 id="modalTitle"></h2>
+          <img id="modalImage" src="" alt="" style="max-width: 100%; margin-bottom: 10px;">
+          <p id="modalDescription"></p>
+          <h4 id="modalPrice"></h4>
+        </div>
+      </div>
+    <!-- Menu Item Popup End -->>    
+    
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -133,6 +145,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="js/menuPopulator.js"></script>
+    <script src="js/menuPopup.js"></script>
 </body>
 
 </html>
