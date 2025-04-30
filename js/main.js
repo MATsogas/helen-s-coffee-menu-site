@@ -91,5 +91,21 @@
         }
     });
     
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarCollapse = document.getElementById("navbarCollapse");
+    
+        // Listen for collapse show/hide events from Bootstrap
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+            // Remove inline styles when the menu is expanded
+            navbarCollapse.removeAttribute('style');
+        });
+    
+        // When the collapse finishes collapsing
+        navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+            // Restore original style after animation ends
+            navbarCollapse.setAttribute('style', 'position: relative; left: -4.5em;');
+        });
+    });
+
 })(jQuery);
 
