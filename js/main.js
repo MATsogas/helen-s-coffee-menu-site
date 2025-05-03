@@ -107,5 +107,21 @@
         });
     });
 
+    $(document).ready(function () {
+        const widget = document.getElementById('snapwidget');
+        const widgetContainer = document.getElementById('snapwidget-container');
+        const backup = document.getElementById('backup-embedded');
+        
+        // Timeout if widget doesn't load in 3 seconds
+        const widgetTimeout = setTimeout(() => {
+            widgetContainer.style.display = 'none';
+            widget.style.display = 'none';
+            backup.style.display = 'block';
+        }, 3000);
+        
+        // If widget loads, cancel fallback
+        widget.onload = () => clearTimeout(widgetTimeout);
+    }); 
+
 })(jQuery);
 
